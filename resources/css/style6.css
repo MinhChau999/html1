@@ -1,0 +1,34 @@
+:root {
+	--color1 :red;
+	--color2 :blue;
+	--color3 : #ccc;
+}
+
+.menu {
+   background-color: var(--color3);
+   font-family: 'Roboto', sans-serif;
+}
+
+.MenuHead > li {
+   display: inline-block;
+   list-style-type: none;
+}
+
+.MenuHead > li:hover >ul{
+   display: block;
+} 
+
+.Sub {
+   position: relative;
+}
+
+.MenuSub {
+   position: absolute;
+   left: 0;
+   top: 110%;
+   width: 100px;
+   height: auto;
+   background: var(--color1);
+   display: none;
+   list-style-type: none;
+}

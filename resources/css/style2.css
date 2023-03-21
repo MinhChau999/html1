@@ -1,0 +1,60 @@
+.G {
+	background-color: green;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+.A {
+	background-color: Red;
+}
+
+.B {
+	background-color: Blue;
+}
+
+.C {
+	background-color: Aqua;
+}
+
+.E {
+	background-color: chartreuse;
+}
+
+.F {
+	background-color: burlywood;
+}
+
+@media screen and (max-width: 1200px) {
+	.G {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 10px;
+	}
+	.A {
+		grid-column: 1 / span 2; /* thiết lập phần tử trải dài qua hai cột */
+		width: 100%; /* set the width to 100% */
+	}
+	.F {
+		grid-column: 2 / span 3;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.G {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 10px;
+	}
+	.A {
+		grid-column: 1 / span 2; /* thiết lập phần tử trải dài qua hai cột */
+		width: 100%; /* set the width to 100% */
+	}
+	.E {
+		grid-column: span 2;
+		width: 100%;
+	}
+	.F {
+		grid-column: 3 / span 2;
+		width: 100%;
+	}
+}

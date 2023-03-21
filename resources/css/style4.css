@@ -1,0 +1,43 @@
+/* .G {
+	background-color: #ff0000;
+	min-height: 100px;
+	display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+} */
+.it {
+   display: inline-block;
+   width: calc(99% / 3);
+}
+
+.A {
+   background-color: #0000ff;
+   min-height: 100px;
+}
+
+.B {
+   background-color: #00ff00;
+   min-height: 100px;
+}
+
+.C {
+   background-color: #ffff00;
+   min-height: 100px;
+}
+
+/* .E {
+   background-color: #ff00ff;
+   min-height: 100px;
+   flex: calc(20% - 20px);
+}
+
+.F {
+   background-color: #00ffff;
+   min-height: 100px;
+   flex: calc(20% - 20px);
+} */
+
+@media (max-width: 900px) {
+
+} 

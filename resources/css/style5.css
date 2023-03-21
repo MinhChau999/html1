@@ -1,0 +1,218 @@
+:root {
+	--color1 :red;
+	--color2 :blue;
+	--color3 : #ccc;
+}
+
+.SProduct {
+	margin-left: auto;
+	margin-right: auto;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.tieu-de {
+	text-align: center;
+}
+
+.tieu-de h2 {
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.nhom-san-pham-inline {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.nhom-san-pham-inline .it {
+	display: inline-block;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: black;
+	border-radius: 30px;
+	border: 0.5px solid #ececec;
+	padding: 5px 10px;
+	width: auto;
+	text-decoration: none;
+	justify-content: center;
+	padding-left: 50px;
+}
+
+.nhom-san-pham-inline .it img {
+	position: absolute;
+	height: auto;
+	width: 35px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: 10px;
+	filter: grayscale(100%);
+}
+
+.san-pham-grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-content: center;
+	min-height: 300px;
+	gap: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.san-pham-grid .san-pham {
+	border: 0.5px solid #ececec;
+}
+
+.san-pham-grid .san-pham img {
+	width: 100%;
+	height: auto;
+	background-color: #e0f0ff;
+}
+
+.san-pham-grid .san-pham .text {
+	margin: 20px;
+	border-bottom: 1px solid blue;
+}
+
+.fix {
+	background-color: red;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 200px;
+	height: 50vh;
+}
+
+.fix span {
+	position: absolute;
+	top: 5%;
+	right: 10%;
+}
+
+.test {
+	height: 2000px;
+}
+
+.SAbouts {
+	padding-top: 100px;
+	padding-bottom: 100px;
+   padding-left: 20px;
+   padding-right: 20px;
+	background: var(--color3);
+	font-family: 'Roboto', sans-serif;
+}
+
+.SAbouts .Wrap {
+	display: grid;
+	grid-template-columns: 1fr 0.8fr;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.SAbouts .Wrap .left {
+	width: 100%;
+}
+
+.SAbouts .Wrap .left h2 {
+	font-size: calc(100% + 20px);
+	font-weight: 600;
+	color: blue;
+}
+
+.SAbouts .Wrap .left .content {
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.SAbouts .Wrap .left .content-detail {
+	font-size: 17px;
+	font-weight: 550;
+	border-left: 4px solid gray;
+	padding-left: 20px;
+	margin-left: 20px;
+}
+
+.SAbouts .Wrap .left a {
+	text-decoration: none;
+	margin-top: 20px;
+	align-items: center;
+	font-weight: bold;
+	color: blue;
+}
+
+.SAbouts .Wrap .right {
+	position: relative;
+}
+
+.SAbouts .Wrap .right img {
+	width: 100%;
+	height: auto;
+	margin-left: 20px;
+	border-top-right-radius: 100px;
+}
+
+.SAbouts .Wrap .right .year {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 200px;
+	height: 200px;
+	border: 2px solid red;
+	border-radius: 20px;
+	padding-left: 20px;
+	background-color: white;
+	color: red;
+	font-weight: bold;
+}
+
+.SAbouts .Wrap .right .year .year-number {
+	margin: 5px;
+	font-size: 80px;
+}
+
+.SAbouts .Wrap .right .year .year-content {
+   margin-top: 0;
+	margin-left: auto;
+	margin-right: 30px;
+}
+
+.SAbouts .Wrap .right .year .year-ho-so {
+	margin-left: auto;
+	margin-right: 30px;
+}
+
+@media screen and (max-width: 900px) {
+	.SAbouts .Wrap {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+	.SAbouts .Wrap .left h2 {
+		text-align: center;
+	}
+   .SAbouts .Wrap .right img {
+      width: 100%;
+      height: auto;
+      margin-left: 0px;
+      border-radius: 20px;
+   }
+	.SAbouts .Wrap .right .year {
+		left: 0;
+		right: 0;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+	}
+}

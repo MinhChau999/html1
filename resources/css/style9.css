@@ -1,0 +1,210 @@
+:root {
+	--color1: blue;
+	--color2: rgb(199, 199, 8);
+	--color3: cyan;
+	--color4: rgb(153, 153, 6);
+	--color5: orange;
+	--color6: #ccc;
+	--color7: rgb(4, 4, 88);
+
+	--font1: 'Roboto', sans-serif;
+
+	--height1: 300px;
+	--height2: 600px;
+
+	--width: 85%;
+	--max-width: 1200px;
+}
+
+section {
+	background: #ccc;
+}
+
+.wrapAuto {
+	width: var(--width);
+	max-width: var(--max-width);
+	margin: auto;
+}
+
+.box1 .container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
+.box1 .container .A {
+	background: var(--color1);
+	min-height: 100px;
+}
+
+.box1 .container .B {
+	grid-column: 2 / span 3;
+	display: grid;
+	grid-template-columns: 1fr;
+	min-height: 100px;
+}
+
+.box1 .container .B .Up {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.box1 .container .B .Down {
+	background: var(--color4);
+}
+
+.box1 .container .B .Up .C {
+	background: var(--color1);
+}
+
+.box1 .container .B .Up .E {
+	grid-column: 3 / span 1;
+	background: var(--color7);
+}
+
+.SImage {
+	position: relative;
+	min-height: 500px;
+}
+
+.SImage .container {
+	position: absolute;
+	min-height: 70px;
+   bottom: 15%;
+	width: 100%;
+}
+
+.SImage .container .wrapAuto {
+   position: relative;
+}
+
+.SImage .container .wrapAuto .F {
+   position: absolute;
+   left: 0;
+   min-height: 50px;
+   min-width: 5%;
+   background: cyan;
+}
+
+.SImage .container .wrapAuto .G {
+   position: absolute;
+   left: 50%;
+	transform: translateX(-40%);
+   min-height: 50px;
+   min-width: 50%;
+   background: cyan;
+}
+
+.SImage .container .wrapAuto .H {
+   position: absolute;
+   right: 0;
+   min-height: 50px;
+   min-width: 10%;
+   background: cyan;
+}
+
+.box3 {
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.box3 .container {
+	min-height: 500px;
+	display: grid;
+	gap: 40px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.box3 .container .A {
+	min-height: 500px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.box3 .container .A .C {
+	margin-top: auto;
+	height: 90%;
+	background: var(--color4);
+}
+
+.box3 .container .A .D {
+	display: grid;
+	grid-template-rows: repeat(10, 1fr);
+	gap: 20px;
+}
+
+.box3 .container .A .D .I {
+	grid-row: 1 / span 9;
+	background: var(--color4);
+}
+
+.box3 .container .A .D .J {
+	grid-row: 10 / span 1;
+	background: var(--color4);
+}
+
+.box3 .container .B {
+	min-height: 500px;
+	display: grid;
+	grid-template-rows: repeat(8, 1fr);
+	gap: 20px;
+}
+
+.box3 .container .B .E {
+	background: var(--color4);
+	grid-row: 1 / span 5;
+}
+
+.box3 .container .B .F {
+	grid-row: 6 / span 1;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+.box3 .container .B .F .X {
+	background: var(--color4);
+}
+
+.box3 .container .B .F .Y {
+	background: var(--color4);
+}
+
+.box3 .container .B .F .Z {
+	background: var(--color4);
+}
+
+.box3 .container .B .G {
+	grid-row: 7 / span 2;
+	background: var(--color4);
+}
+
+@media screen and (max-width: 900px) {
+	.box1 .container {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 10px;
+		margin-bottom: 10px;
+	}
+
+	.box1 .container .B {
+		grid-column: 1 / span 1;
+		min-height: 50px;
+	}
+
+	.box1 .container .B .Up {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+
+	.box1 .container .B .Up .E {
+		grid-column: span 1;
+	}
+
+	.box1 .container .B .Down {
+		display: none;
+	}
+
+	.box3 .container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

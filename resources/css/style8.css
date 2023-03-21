@@ -1,0 +1,224 @@
+:root {
+	--color1: blue;
+	--color2: rgb(199, 199, 8);
+	--color3: cyan;
+	--color4: yellow;
+	--color5: orange;
+	--color6: #ccc;
+
+	--font1: 'Roboto', sans-serif;
+
+	--height1: 300px;
+	--height2: 600px;
+}
+
+section {
+	font-family: var(--font1);
+}
+ul {
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 0px; /* Đặt giá trị này thành 0px */
+}
+
+.SBanner .container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.SBanner .container .logo {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20%;
+}
+
+.SBanner .container .logo img {
+	width: 100%;
+	height: auto;
+}
+
+.SBanner .container .menu {
+	grid-column: 2 / span 2;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.SBanner .container .menu .menuUp {
+	background: var(--color6);
+	border-bottom-left-radius: 30px;
+	padding: 10px 0px 10px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.SBanner .container .menu .menuUp .left {
+	padding-left: 5%;
+	margin-left: 5%;
+	position: relative;
+}
+
+.SBanner .container .menu .menuUp .left .leftImg{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.SBanner .container .menu .menuUp .left .text .phone {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.SBanner .container .menu .menuUp .right {
+	display: flex; /* Thêm thuộc tính display flex */
+	align-items: center; /* Căn giữa phần tử con theo chiều dọc */
+	margin-left: auto; /* Di chuyển phần tử sang bên phải */
+	padding-right: 15%;
+	height: 30px;
+ }
+.SBanner .container .menu .menuUp .right .search {
+	position: relative;
+}
+.SBanner .container .menu .menuUp .right .search input {
+	width: 100%;
+	border: none;
+	background: #a9a9a9;
+	border-radius: 30px;
+	padding-left: 20px;
+	height: 30px;
+	color: black;
+}
+
+.SBanner .container .menu .menuUp .right .searchBtn {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: auto;
+}
+
+.SBanner .container .menu .menuDown {
+	padding: 0px 15% 0px 0px;
+}
+
+.SBanner .container .menu .menuDown > ul {
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	list-style: none;
+	align-items: center;
+}
+
+.SBanner .container .menu .menuDown > ul > li {
+	flex-grow: 1;
+	text-align: center;
+}
+.SBanner .container .menu .menuDown ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+.SBanner .container .menu .menuDown > ul > li > a > i {
+	color: red;
+	font-size: 20px;
+}
+
+.SBanner .container .menu .menuDown ul > li:hover > ul {
+	display: block;
+}
+
+.SBanner .container .menu .menuDown ul > li {
+	position: relative;
+	z-index: 1;
+}
+
+.SBanner .container .menu .menuDown ul > li > ul {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	min-width: 100px;
+	width: auto;
+	height: auto;
+	background: var(--color6);
+	display: none;
+	list-style-type: none;
+}
+
+.SBanner .container .menu .menuDown ul > li > ul > li {
+	padding: 10px 40px 10px 40px;
+ }
+
+ .SBanner .container .menu .menuDown ul > li > ul > li:hover {
+	background: #e2e1e1;
+ }
+
+.SContent .container {
+	position: relative;
+	z-index: 0;
+}
+
+.SContent .container > img {
+	width: 100%;
+	height: auto;
+}
+
+.SContent .container .logoImage {
+	position: absolute;
+	left: 50%;
+	bottom: 55%;
+	transform: translate(-50%, -50%);
+	filter: grayscale(100%);
+}
+
+.SContent .container .mouse {
+	position: absolute;
+	left: 10%;
+	bottom: 10%;
+}
+
+.SContent .container .quote {
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	transform: translateX(-50%);
+}
+
+
+.SContent .container .quote .text {
+	font-size: 20px;
+	color: white;
+	margin-bottom: 10px;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.SContent .container .quote .text .textStart {
+	font-size: 40px;
+	color: white;
+	font-weight: 600;
+
+}
+.SContent .container .page {
+	position: absolute;
+	right: 10%;
+	bottom: 10%;
+	margin-bottom: 10px;
+	font-size: 35px;
+	color: white;
+}
+
+
+.SContent .container .page span {
+	margin-right: 5px;
+}
+
+.SContent .container .page .currentPage{
+	font-size: 35px;
+	font-weight: 500;
+}
+
+.SContent .container .page .allPage{
+	font-size: 22px;
+	font-weight: 200;
+}
