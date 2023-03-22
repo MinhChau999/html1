@@ -6,72 +6,80 @@
 	--color5: #f2e5d3;
 	--color6: #cf9f4e;
 	--color7: #bacfc4;
-
-   --color0: #ffffff;
+	--color0: #ffffff;
 
 	--font1: 'Roboto', sans-serif;
+	--font2: 'Roboto Condensed', sans-serif;
+	--font3: 'Lora', serif;
 
-	--width: 70%;
+	--widthDesktop: 70%;
+	--widthMobile: 90%;
 	--max-width: 1200px;
 }
 
 .wrapAuto {
-	width: var(--width);
+	width: var(--widthDesktop);
 	max-width: var(--max-width);
 	margin: auto;
 }
 
-html.fixed header{
+/* start class in html */
+
+html.fixed header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1;
+	z-index: 10;
 	left: 0;
 }
 
+/* end html */
+
+/* start header */
+
 header {
-   background: var(--color2);
+	background: var(--color2);
 }
 
 header .container {
-   display: flex;
-   padding-top: 2%;
-   padding-bottom: 2%;
+	display: flex;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 
 header .container .logo {
-   display: flex;
-   flex: 1;
-   justify-items: center;
+	display: flex;
+	flex: 1;
+	justify-items: center;
 }
 
 header .container .logo img {
-   height: 8vh;
-   width: auto;
-   margin-right: auto;
+	height: 8vh;
+	width: auto;
+	margin-right: auto;
 }
 
 header .container .nav {
-   flex: 1;
+	flex: 1;
 }
 
 header .container .navMidle {
-   flex: 1;
+	flex: 1;
 }
 
 header .container .nav > ul {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	list-style: none;
 	padding: 0;
 }
 header .container .nav > ul > li > a {
 	text-decoration: none;
 	color: var(--color1);
-   font-family: var(--font1);
-   font-size: 2.5vh;
-   font-weight: 700;
+	font-family: var(--font1);
+	font-size: 2.5vh;
+	font-weight: 700;
 }
 
 header .container .nav ul > li {
@@ -90,79 +98,127 @@ header .container .nav ul > li > ul {
 	background: var(--color2);
 	display: none;
 	list-style-type: none;
-   padding: 10% 0 10% 0;
+	padding: 10% 0 10% 0;
 }
 
-header .container .nav ul > li:hover > ul{
-   display: block;
+header .container .nav ul > li:hover > ul {
+	display: block;
 }
 
 header .container .nav ul > li > ul > li:hover {
-   background: #e2e1e1;
+	background: #e2e1e1;
 }
 
-header .container .nav > ul > li >ul > li > a {
+header .container .nav > ul > li > ul > li > a {
 	text-decoration: none;
 	color: var(--color1);
-   font-family: var(--font1);
-   font-size: 2vh;
-   font-weight: 500;
+	font-family: var(--font1);
+	font-size: 2vh;
+	font-weight: 500;
 }
 
+@media screen and (max-width: 900px) {
+	.wrapAuto {
+		width: var(--widthMobile);
+	}
+	header .container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	header .container .nav,
+	header .container .navMidle {
+		display: none;
+	}
+
+	header .container .logo {
+		justify-content: center;
+	}
+}
+
+/* end header */
+
+/* start banner */
 .SBanner {
-   background: var(--color2);
+	background: var(--color2);
 }
 
 .SBanner .container {
-   display: flex;
-   gap: 2%;
-   padding-top: 2%;
-   padding-bottom: 2%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 
 .SBanner .container .bannerLeft {
-   flex: 1;
+	grid: span 1;
 }
 
 .SBanner .container .bannerLeft .title {
-   color: var(--color1);
-   font-family: var(--font1);
-   font-size: 4vh;
-   font-weight: 700;
+	color: var(--color1);
+	font-family: var(--font1);
+	font-size: 4vh;
+	font-weight: 700;
 }
 
 .SBanner .container .bannerLeft .content {
-   color: black;
-   font-family: var(--font1);
-   font-size: 2.5vh;
-   font-weight: 400;
-   margin-right: 15%;
-   margin-bottom: 5%;
+	color: black;
+	font-family: var(--font1);
+	font-size: 2.5vh;
+	font-weight: 400;
+	margin-right: 15%;
+	margin-bottom: 5%;
 }
-
-.SBanner .container .bannerLeft .button > a {
-   text-decoration: none;
-   background: linear-gradient(270deg,#ba8037 0%,#eccb6e 100%);
-   color: black;
-   font-family: var(--font1);
-   font-size: 2.5vh;
-   font-weight: 400;
-   padding: 1% 2% 1% 2%;
-   border-radius: 5px;
+.button > a {
+	text-decoration: none;
+	background: linear-gradient(270deg, #ba8037 0%, #eccb6e 100%);
+	color: black;
+	font-family: var(--font1);
+	font-size: 2.5vh;
+	font-weight: 400;
+	padding: 1% 2% 1% 2%;
+	border-radius: 5px;
 }
-.SBanner .container .bannerLeft .button > a > i{
-   margin-left: 3%;
+.SBanner .container .bannerLeft .button > a > i {
+	margin-left: 3%;
 }
 
 .SBanner .container .bannerRight {
-   flex: 1;
+	grid: 2 / span 1;
+	text-align: center;
 }
 
-.SBanner .container .bannerRight img {
-   width: 100%;
-   height: auto;
+.SBanner .container .bannerRight > img {
+	width: 110%;
+	height: auto;
 }
 
+@media screen and (max-width: 900px) {
+	.SBanner .container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.SBanner .container .bannerRight > img {
+		width: 85%;
+		height: auto;
+		margin: 4% auto 4% auto;
+	}
+
+	.SBanner .container .bannerLeft {
+		width: 90%;
+		margin: 3% auto 3% auto;
+		text-align: center;
+	}
+
+	.SBanner .container .bannerLeft .content {
+		margin-right: 0;
+	}
+}
+
+/* end banner */
+
+/* start logo */
 .SLogo {
 	padding-top: 2%;
 	padding-bottom: 2%;
@@ -170,22 +226,537 @@ header .container .nav > ul > li >ul > li > a {
 }
 
 .SLogo .container {
-   display: flex;
-   justify-content: space-between;
-   gap: 5%;
-   width: 80%;
-   margin: auto;
+	display: flex;
+	justify-content: space-between;
+	gap: 5%;
+	width: 80%;
+	margin: auto;
 }
 
 .SLogo .container .item {
-   flex: 1;
-   height: 70px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+	flex: 1;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .SLogo .container .item > img {
-   width: 100%;
-   height: auto;
+	width: 100%;
+	height: auto;
 }
+
+@media screen and (max-width: 900px) {
+	.SLogo .container .item:nth-child(4) {
+		display: none;
+	}
+}
+
+/* end logo */
+
+@media screen and (max-width: 900px) {
+	.SLogo .container {
+		align-items: center;
+	}
+}
+
+/* end logo */
+
+/* start box1 */
+.box1 {
+	width: 90%;
+	margin: auto;
+	padding: 5% 0 5% 0;
+}
+
+.box1 .text {
+	/* margin: auto; */
+	text-align: center;
+	padding: 2% 0 2% 0;
+}
+
+.box1 .text .title {
+	color: var(--color1);
+	font-family: var(--font2);
+	font-size: 6vh;
+	font-weight: 700;
+}
+
+.box1 .text .content {
+	color: black;
+	font-family: var(--font1);
+	font-size: 2.5vh;
+	font-weight: 400;
+	margin-left: 4%;
+	margin-right: 4%;
+}
+
+.box1 .items {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 2% 0 2% 0;
+}
+
+.box1 .items .item {
+	height: 35vh;
+	text-align: center;
+	border: solid 1px #ccc;
+}
+
+.box1 .items .item > img {
+	width: auto;
+	height: 10vh;
+	padding: 5% 0 5% 0;
+}
+
+.box1 .items .item > .textBox {
+	margin: 0 5% 0 5%;
+}
+
+.box1 .items .item > .textBox > .titleBox {
+	color: var(--color1);
+	font-family: var(--font1);
+	font-size: 2.5vh;
+	font-weight: 700;
+}
+
+.box1 .items .item > .textBox > .contentBox {
+	color: black;
+	font-family: var(--font1);
+	font-size: 2.2vh;
+	font-weight: 300;
+	height: 15vh;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+	.box1 .items {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* end box1 */
+
+/* start product1 */
+
+.SProduct1 {
+	padding: 5% 0 5% 0;
+	background-image: url('/resources/img/homework2/Layer\ 33.png');
+	background-size: cover;
+	background-position: center;
+}
+
+.SProduct1 .container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.SProduct1 .container .imageProduct1 {
+	position: relative;
+}
+
+.SProduct1 .container .imageProduct1 .product1 {
+	width: 85%;
+	height: auto;
+	position: relative;
+	left: -10%;
+	z-index: 1;
+}
+
+.SProduct1 .container .imageProduct1 .layer36 {
+	position: absolute;
+	width: auto;
+	height: 50%;
+	bottom: 50%;
+	right: 15%;
+}
+
+.SProduct1 .container .imageProduct1 .layer37 {
+	position: absolute;
+	width: 70%;
+	height: auto;
+	left: -10%;
+	bottom: 30%;
+	z-index: 0;
+}
+
+.SProduct1 .container .imageProduct1 .Scent {
+	position: absolute;
+	width: 20%;
+	height: auto;
+	top: 25%;
+	left: 33%;
+	z-index: 2;
+}
+
+.SProduct1 .container .textProduct1 {
+	margin: auto 0 auto 0;
+}
+
+.SProduct1 .container .textProduct1 .titleProduct1 h1 {
+	color: var(--color2);
+	font-family: var(--font2);
+	font-size: 6vh;
+	font-weight: 700;
+}
+
+.SProduct1 .container .textProduct1 .contentProduct1 .contentItem {
+	color: var(--color2);
+	font-family: var(--font1);
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+	width: 70%;
+	position: relative;
+}
+
+.SProduct1 .container .textProduct1 .contentProduct1 .contentItem > i {
+	font-size: 4.5vh;
+	position: absolute;
+	left: -15%;
+}
+
+.SProduct1 .container .textProduct1 .button {
+	margin-top: 50px;
+}
+
+/* end product1 */
+
+/* start product2 */
+
+.SProduct2 {
+	padding: 7% 0 7% 0;
+	background: var(--color5);
+}
+
+.SProduct2 .container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.SProduct2 .container .imageProduct2 {
+	position: relative;
+}
+
+.SProduct2 .container .imageProduct2 .layer26 {
+	position: absolute;
+	width: auto;
+	height: 80%;
+	bottom: 0%;
+	left: 10%;
+	z-index: 1;
+}
+
+.SProduct2 .container .imageProduct2 .layer25 {
+	position: absolute;
+	width: auto;
+	height: 80%;
+	bottom: 0%;
+	left: 30%;
+	z-index: 1;
+}
+
+.SProduct2 .container .imageProduct2 .layer27 {
+	position: absolute;
+	width: auto;
+	height: 80%;
+	bottom: 0%;
+	left: 50%;
+	z-index: 1;
+}
+.SProduct2 .container .imageProduct2 .layer28 {
+	position: absolute;
+	width: auto;
+	height: 80%;
+	bottom: 0%;
+	left: 70%;
+	z-index: 1;
+}
+
+.SProduct2 .container .imageProduct2 .ellipse {
+	position: absolute;
+	width: auto;
+	height: 20%;
+	bottom: -20%;
+	left: 15%;
+}
+
+.SProduct2 .container .imageProduct2 .layer29 {
+	position: absolute;
+	width: auto;
+	height: 20%;
+	bottom: 50%;
+	left: -10%;
+}
+
+.SProduct2 .container .imageProduct2 .layer30 {
+	position: absolute;
+	width: auto;
+	height: 15%;
+	bottom: -10%;
+	left: -5%;
+}
+.SProduct2 .container .imageProduct2 .layer31 {
+	position: absolute;
+	width: auto;
+	height: 15%;
+	top: 10%;
+	right: 0%;
+}
+
+.SProduct2 .container .imageProduct2 .layer69 {
+	position: absolute;
+	width: auto;
+	height: 80%;
+	bottom: 0;
+	right: -15%;
+	z-index: 0;
+}
+
+.SProduct2 .container .textProduct2 {
+	margin: auto 0 auto 0;
+}
+
+.SProduct2 .container .textProduct2 {
+	padding-left: 5%;
+}
+
+.SProduct2 .container .textProduct2 .titleProduct2 h1 {
+	color: var(--color6);
+	font-family: var(--font2);
+	font-size: 6vh;
+	font-weight: 700;
+}
+
+.SProduct2 .container .textProduct2 .contentProduct2 .contentItem {
+	color: var(--color6);
+	font-family: var(--font1);
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	width: 70%;
+	position: relative;
+}
+
+.SProduct2 .container .textProduct2 .contentProduct2 .contentItem > i {
+	font-size: 4.5vh;
+	position: absolute;
+	left: -15%;
+}
+
+.SProduct2 .container .textProduct2 .contentProduct2 .contentItem > p {
+	color: black;
+}
+
+.SProduct2 .container .textProduct2 .button {
+	margin-top: 50px;
+}
+
+/* end product2 */
+
+/* start About */
+.SAbout {
+	position: relative;
+	background: white;
+	padding: 3% 0 3% 0;
+}
+
+.SAbout::before {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 75%;
+	background: var(--color7);
+}
+
+.SAbout .container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.SAbout .container .textAbout {
+	position: relative;
+	z-index: 1;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+
+.SAbout .container .textAbout .titleAbout {
+	color: var(--color4);
+	font-family: var(--font2);
+	font-size: 6vh;
+	font-weight: 700;
+}
+
+.SAbout .container .textAbout .contentAbout {
+	color: var(--color4);
+	font-family: var(--font1);
+	font-size: 3vh;
+	font-weight: 400;
+	padding-bottom: 3%;
+}
+
+.SAbout .container .imageAbout {
+	position: relative;
+	z-index: 1;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1px;
+}
+.SAbout .container .imageAbout .itemImageAbout {
+	grid-column: span 1;
+	position: relative;
+}
+
+.SAbout .container .imageAbout .itemImageAbout img {
+	width: 100%;
+	height: auto;
+}
+
+.SAbout .container .imageAbout .itemImageAbout .textImageAbout {
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+}
+
+.SAbout .container .imageAbout .itemImageAbout .textImageAbout h4 {
+	color: var(--color0);
+	font-family: var(--font1);
+	font-size: 2vh;
+	font-weight: 700;
+	margin: 3% 0 3% 0;
+}
+
+.SAbout .container .imageAbout .itemImageAbout .textImageAbout p {
+	color: var(--color0);
+	font-family: var(--font1);
+	font-size: 1.2vh;
+	font-weight: 300;
+	margin: 3% 0 3% 0;
+}
+
+/* end  About*/
+
+/* start Review */
+.SReview {
+	background: white;
+	padding: 5% 0 5% 0;
+}
+
+.SReview .container {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.SReview .container .textReview {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+
+.SReview .container .textReview > h2 {
+	color: var(--color4);
+	font-family: var(--font3);
+	font-size: 7vh;
+	font-weight: 300;
+	margin: 2% 0 2% 0;
+}
+
+.SReview .container .textReview > p {
+	color: var(--color4);
+	font-family: var(--font1);
+	font-size: 2.5vh;
+	font-weight: 400;
+	margin: 2% 0 2% 0;
+}
+
+.SReview .container .imageReview {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px;
+}
+
+.SReview .container .imageReview .itemImageReview {
+	grid-column: span 1;
+	border: solid 1px var(--color2);
+	border-radius: 10px;
+}
+
+.SReview .container .imageReview .itemImageReview img {
+	width: 100%;
+	height: auto;
+}
+
+.SReview .container .imageReview .itemImageReview .image {
+	position: relative;
+}
+
+.SReview .container .imageReview .itemImageReview .image .avatar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: translate(10%, 50%); 
+}
+
+.SReview .container .imageReview .itemImageReview .image .avatar > img{
+	border-radius: 50%;
+	width: auto;
+	height: 40px;
+ }
+
+.SReview .container .imageReview .itemImageReview .text {
+	width: 88%;
+	margin: 0 auto 5% auto;
+}
+
+.SReview .container .imageReview .itemImageReview .text h2 {
+	color: var(--color1);
+	font-family: var(--font1);
+	font-size: 2.5vh;
+	font-weight: 700;
+	margin: 2% 0 2% 20%;
+}
+
+.SReview .container .imageReview .itemImageReview .text .textBox {
+	height: 12vh;
+   overflow: hidden;
+}
+
+.SReview .container .imageReview .itemImageReview .text p {
+	color: var(--color1);
+	font-family: var(--font1);
+	font-size: 2vh;
+	font-weight: 400;
+	margin: 2% 0 2% 0;
+	margin-inline-start: 1px;
+	margin-inline-end: 1px;
+}
+
+/* end Review */
+
+/* start footer */
+
+footer {
+	background: var(--color4);
+	padding: 5% 0 5% 0;
+}
+
