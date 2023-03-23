@@ -6,3 +6,11 @@ window.addEventListener('scroll', function() {
       html.classList.remove('fixed');
    }
  });
+
+$(document).on('click', '.bam', function() {
+   $('body').addClass('Popup');
+})
+
+$(document).on('click', '.exit', function() {
+   $('body').removeClass('Popup');
+})

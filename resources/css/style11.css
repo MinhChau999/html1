@@ -7,6 +7,7 @@
 	--color6: #cf9f4e;
 	--color7: #bacfc4;
 	--color0: #ffffff;
+	--color10: black;
 
 	--font1: 'Roboto', sans-serif;
 	--font2: 'Roboto Condensed', sans-serif;
@@ -29,7 +30,7 @@ html.fixed header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 10;
+	z-index: 4;
 	left: 0;
 }
 
@@ -92,24 +93,45 @@ header .container .nav ul > li > ul {
 	position: absolute;
 	left: 0;
 	top: 100%;
-	min-width: 100px;
+	min-width: 200px;
 	width: auto;
 	height: auto;
-	background: var(--color2);
+	background: var(--color0);
 	display: none;
 	list-style-type: none;
-	padding: 10% 0 10% 0;
+	margin-left: 0;
+	padding-left: 0%;
 }
 
 header .container .nav ul > li:hover > ul {
 	display: block;
+	animation: navLiFade 0.5s ease-in;
+}
+
+@keyframes navLiFade {
+	from {
+		opacity: 0;
+		right: -300%;
+		/* transform: rotate(90deg); */
+	}
+	to {
+		opacity: 1;
+		right: 100%;
+		/* transform: rotaate(0deg); */
+	}
 }
 
 header .container .nav ul > li > ul > li:hover {
-	background: #e2e1e1;
+	background: var(--color3);
+	color: black;
 }
 
-header .container .nav > ul > li > ul > li > a {
+header .container .nav ul > li > ul > li {
+	border-bottom: 1px solid #ccc;
+	padding: 5% 0 5% 0;
+}
+
+header .container .nav ul > li > ul > li > a {
 	text-decoration: none;
 	color: var(--color1);
 	font-family: var(--font1);
@@ -345,6 +367,18 @@ header .container .nav > ul > li > ul > li > a {
 	background-image: url('/resources/img/homework2/Layer\ 33.png');
 	background-size: cover;
 	background-position: center;
+	position: relative;
+}
+
+.SProduct1 .image3D {
+	position: absolute;
+	top: 0;
+	transform: translateY(-50%);
+	width: 10%;
+}
+.SProduct1 .image3D > img {
+	width: 100%;
+	height: auto;
 }
 
 .SProduct1 .container {
@@ -424,12 +458,38 @@ header .container .nav > ul > li > ul > li > a {
 	margin-top: 50px;
 }
 
+@media screen and (max-width: 900px) {
+	.SProduct1 .container {
+		grid-template-columns: 1fr;
+	}
+
+	.SProduct1 .container .imageProduct1 {
+		order: 2;
+		width: 70%;
+		margin: 3% auto 3% auto;
+	}
+
+	.SProduct1 .container .textProduct1 {
+		order: 1;
+		width: 90%;
+		margin: 3% auto 3% auto;
+		text-align: center;
+	}
+
+	.SProduct1 .container .textProduct1 .contentItem {
+		margin: auto;
+	}
+
+	.SProduct1 .container .textProduct1 .contentProduct1 .contentItem > p {
+		margin: 8px 0 8px 0;
+	}
+}
 /* end product1 */
 
 /* start product2 */
 
 .SProduct2 {
-	padding: 7% 0 7% 0;
+	padding: 5% 0 5% 0;
 	background: var(--color5);
 }
 
@@ -437,55 +497,57 @@ header .container .nav > ul > li > ul > li > a {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 5%;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	padding: 5% 0 5% 0;
 }
 
 .SProduct2 .container .imageProduct2 {
 	position: relative;
+	margin-top: auto;
+	display: flex;
 }
 
 .SProduct2 .container .imageProduct2 .layer26 {
-	position: absolute;
-	width: auto;
-	height: 80%;
-	bottom: 0%;
-	left: 10%;
+	position: relative;
+	width: 15%;
+	height: auto;
 	z-index: 1;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: 0;
 }
 
 .SProduct2 .container .imageProduct2 .layer25 {
 	position: absolute;
-	width: auto;
-	height: 80%;
-	bottom: 0%;
-	left: 30%;
+	width: 15%;
+	height: auto;
+	bottom: 0;
+	left: 20%;
 	z-index: 1;
 }
 
 .SProduct2 .container .imageProduct2 .layer27 {
 	position: absolute;
-	width: auto;
-	height: 80%;
+	width: 15%;
+	height: auto;
 	bottom: 0%;
-	left: 50%;
+	left: 40%;
 	z-index: 1;
 }
 .SProduct2 .container .imageProduct2 .layer28 {
 	position: absolute;
-	width: auto;
-	height: 80%;
+	width: 15%;
+	height: auto;
 	bottom: 0%;
-	left: 70%;
+	left: 60%;
 	z-index: 1;
 }
 
 .SProduct2 .container .imageProduct2 .ellipse {
 	position: absolute;
 	width: auto;
-	height: 20%;
-	bottom: -20%;
-	left: 15%;
+	height: 25%;
+	bottom: -30%;
+	left: 5%;
 }
 
 .SProduct2 .container .imageProduct2 .layer29 {
@@ -508,7 +570,7 @@ header .container .nav > ul > li > ul > li > a {
 	width: auto;
 	height: 15%;
 	top: 10%;
-	right: 0%;
+	right: 10%;
 }
 
 .SProduct2 .container .imageProduct2 .layer69 {
@@ -516,7 +578,7 @@ header .container .nav > ul > li > ul > li > a {
 	width: auto;
 	height: 80%;
 	bottom: 0;
-	right: -15%;
+	right: 0%;
 	z-index: 0;
 }
 
@@ -559,6 +621,36 @@ header .container .nav > ul > li > ul > li > a {
 	margin-top: 50px;
 }
 
+@media screen and (max-width: 900px) {
+	.SProduct2 {
+		padding: 5% 0 5% 0;
+	}
+	.SProduct2 .container {
+		grid-template-columns: 1fr;
+	}
+
+	.SProduct2 .container .imageProduct2 {
+		order: 2;
+		width: 70%;
+		margin: 3% auto 3% auto;
+	}
+
+	.SProduct2 .container .textProduct2 {
+		order: 1;
+		width: 90%;
+		margin: 3% auto 3% auto;
+		text-align: center;
+	}
+
+	.SProduct2 .container .textProduct2 .contentItem {
+		margin: auto;
+	}
+
+	.SProduct2 .container .textProduct2 .contentProduct2 .contentItem > p {
+		margin: 8px 0 8px 0;
+	}
+}
+
 /* end product2 */
 
 /* start About */
@@ -566,6 +658,43 @@ header .container .nav > ul > li > ul > li > a {
 	position: relative;
 	background: white;
 	padding: 3% 0 3% 0;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.SAbout .image3D {
+	position: absolute;
+	top: 75%;
+	transform: translateY(-50%);
+	width: 10%;
+	opacity: 0;
+	animation: fadein 2s ease-in-out forwards;
+}
+
+.SAbout .imageBackground1 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30%;
+}
+
+.SAbout .imageBackground2 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 10%;
+	transform: translateY(35%);
+}
+.SAbout img {
+	width: 100%;
+	height: auto;
 }
 
 .SAbout::before {
@@ -654,6 +783,14 @@ header .container .nav > ul > li > ul > li > a {
 	margin: 3% 0 3% 0;
 }
 
+@media screen and (max-width: 900px) {
+	.SAbout .container .imageAbout {
+		width: 90%;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1px;
+	}
+}
+
 /* end  About*/
 
 /* start Review */
@@ -714,14 +851,15 @@ header .container .nav > ul > li > ul > li > a {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	transform: translate(10%, 50%); 
+	transform: translate(4%, 50%);
+	width: 20%;
+	height: auto;
 }
 
-.SReview .container .imageReview .itemImageReview .image .avatar > img{
+.SReview .container .imageReview .itemImageReview .image .avatar > img {
 	border-radius: 50%;
-	width: auto;
-	height: 40px;
- }
+	overflow: hidden;
+}
 
 .SReview .container .imageReview .itemImageReview .text {
 	width: 88%;
@@ -738,7 +876,7 @@ header .container .nav > ul > li > ul > li > a {
 
 .SReview .container .imageReview .itemImageReview .text .textBox {
 	height: 12vh;
-   overflow: hidden;
+	overflow: hidden;
 }
 
 .SReview .container .imageReview .itemImageReview .text p {
@@ -751,6 +889,14 @@ header .container .nav > ul > li > ul > li > a {
 	margin-inline-end: 1px;
 }
 
+@media screen and (max-width: 900px) {
+	.SReview .container .imageReview {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.SReview .container .imageReview .itemImageReview:nth-child(n + 5) {
+		display: none;
+	}
+}
 /* end Review */
 
 /* start footer */
@@ -760,3 +906,147 @@ footer {
 	padding: 5% 0 5% 0;
 }
 
+footer .container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 5%;
+	color: var(--color3);
+	padding-bottom: 5%;
+	border-bottom: solid 1px var(--color3);
+	margin-bottom: 2%;
+}
+
+footer .container .address img {
+	width: 40%;
+	height: auto;
+}
+
+footer .container .fanPage img {
+	width: 100%;
+	height: auto;
+}
+
+footer .container h2 {
+	font-family: var(--font1);
+	font-size: 2vh;
+	font-weight: 600;
+}
+
+footer .container p {
+	font-family: var(--font1);
+	font-size: 1.5vh;
+	font-weight: 300;
+}
+
+footer .container .email p {
+	font-size: 1.2vh;
+}
+
+footer .container .email .signUpBox {
+	position: relative;
+}
+
+footer .container .email .signUpBox input {
+	position: relative;
+	height: 4vh;
+}
+
+footer .container .email .signUpBox button {
+	position: absolute;
+	right: 0%;
+	height: 100%;
+	/* font-size: 2vh; */
+	background: var(--color2);
+}
+
+.copyright {
+	color: var(--color2);
+	font-size: 2vh;
+	font-family: var(--font1);
+	font-weight: 300;
+}
+
+.background {
+	position: fixed;
+	/* background: var(--color10); */
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+}
+.background .helloWorld {
+	position: fixed;
+	text-align: center;
+	color: var(--color0);
+	transition: all 2s ease;
+	transform: scale(0.5);
+	opacity: 0;
+	z-index: 1;
+}
+.background .helloWorld .exit {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.background::before,
+.background::after {
+	position: absolute;
+	content: '';
+	height: 0;
+	width: 50%;
+	background: var(--color3);
+	transition: all 2s ease;
+	opacity: 0;
+	z-index: 0;
+}
+
+.background::before{
+	left: 0;
+	top: 0;
+}
+
+.background::after {
+	right: 0;
+	bottom: 0;
+}
+
+.setting {
+	position: fixed;
+	bottom: 10%;
+	right: 10%;
+	font-size: 50px;
+	animation: rotate 3s linear infinite;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+body.Popup .background {
+	visibility: visible;
+}
+
+body.Popup .background::before,
+body.Popup .background::after{
+	height: 100%;
+	opacity: 1;
+}
+
+body.Popup .background .helloWorld {
+	transform: scale(1);
+	opacity: 1;
+}
