@@ -1,0 +1,55 @@
+:root {
+	--color1: blue;
+	--color2: white;
+	--color3: #939d95;
+	--font1: 'Roboto', sans-serif;
+	--font2: 'Roboto Condensed', sans-serif;
+	--font3: 'Lora', serif;
+
+	--widthDesktop: 40%;
+	--widthMobile: 90%;
+	--max-width: 1200px;
+}
+
+.wrapAuto {
+	width: var(--widthDesktop);
+	max-width: var(--max-width);
+	margin: auto;
+	text-align: center;
+}
+
+input {
+	width: 100%;
+	height: 50px;
+	margin: 20px 0 20px 0;
+	padding: 10px 30px 10px 30px;
+	border: solid 3px black;
+	border-radius: 3px;
+   font-size: 3.5vh;
+}
+
+.numberBox {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+
+.numberBox .number {
+	border: solid 1px black;
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 40px;
+	font-size: 4vh;
+	background: rgb(255 255 255);
+	background: linear-gradient(180deg, rgb(255 255 255 / 69%) 51%, rgb(0 0 0 / 10%) 100%);
+   transition: all 0.5s ease-in-out;
+   cursor: pointer;
+}
+
+.numberBox .number:hover {
+	background: rgb(255 255 255);
+	background: linear-gradient(180deg, rgb(255 255 255 / 69%) 0%, rgb(0 0 0 / 10%) 100%);
+ }

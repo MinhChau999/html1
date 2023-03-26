@@ -1,0 +1,50 @@
+:root {
+	--color1: blue;
+	--color2: white;
+	--color3: #939d95;
+	--font1: 'Roboto', sans-serif;
+	--font2: 'Roboto Condensed', sans-serif;
+	--font3: 'Lora', serif;
+
+	--widthDesktop: 70%;
+	--widthMobile: 90%;
+	--max-width: 1200px;
+}
+
+.wrapAuto {
+	width: var(--widthDesktop);
+	max-width: var(--max-width);
+	margin: auto;
+}
+
+.tab {
+   width: 50%;
+   margin: auto;
+}
+
+.tab .GroupItem {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+}
+
+.tab .GroupItem .item {
+   border: 1px solid black;
+   padding: 10px 20px 10px 20px;
+}
+
+.tab .GroupItem .item.active {
+   background-color: var(--color1);
+   color: var(--color2);
+}
+
+.content {
+  background: var(--color1);
+  display: none;
+  color: white;
+}
+
+.content.active {
+  display: block;
+}

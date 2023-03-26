@@ -1,0 +1,61 @@
+:root {
+	--color1: #13553a;
+	--color2: #e0e5df;
+	--color3: #939d95;
+	--color4: #0c3121;
+	--color5: #f2e5d3;
+	--color6: #cf9f4e;
+	--color7: #bacfc4;
+	--color0: #ffffff;
+	--color10: black;
+
+	--font1: 'Roboto', sans-serif;
+	--font2: 'Roboto Condensed', sans-serif;
+	--font3: 'Lora', serif;
+
+	--widthDesktop: 70%;
+	--widthMobile: 90%;
+	--max-width: 1200px;
+}
+
+.wrapAuto {
+	width: var(--widthDesktop);
+	max-width: var(--max-width);
+	margin: auto;
+}
+
+.question {
+   width: 100%;
+   margin: auto;
+   display: flex;
+   align-items: center;
+}
+
+.question .jQG {
+   width: 100%;
+}
+.question .jQG .jItem {
+   width: 100%;
+}
+
+.question .jQG .jItem .jContent {
+   display: none;
+   width: 100%;
+   background: var(--color5);
+   
+   /* visibility: hidden;
+   transition: all 0.3s linear;
+   height: 0;
+   top:0; */
+}
+
+/* .question .jQG .jItem .jContent img {
+   width: auto;
+   height: 100%;
+} */
+
+/* .question .jQG .jItem.active .jContent {
+   visibility: visible;
+   display: block;
+   height: 400px;
+} */
