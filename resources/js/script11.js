@@ -7,6 +7,10 @@ window.addEventListener('scroll', function() {
    }
  });
 
+ $(document).on('click', '.btnMenuMobile', function() {
+   $('body').addClass('showMenu');
+})
+
 $(document).on('click', '.bam', function() {
    $('body').addClass('Popup');
 })

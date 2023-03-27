@@ -34,18 +34,41 @@ html.fixed header {
 	left: 0;
 }
 
+html.fixed header .container {
+	padding: 0;
+}
+
 /* end html */
 
 /* start header */
 
 header {
 	background: var(--color2);
+	position: relative;
+}
+
+header .btnMenuMobile {
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translateY(-50%);
+	font-size: 3.5vh;
+	color: var(--color4);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease;
+	opacity: 0;
+	rotate: 0deg;
+	visibility: hidden;
 }
 
 header .container {
 	display: flex;
 	padding-top: 2%;
 	padding-bottom: 2%;
+	transition: all 0.3s ease-in;
 }
 
 header .container .logo {
@@ -55,13 +78,13 @@ header .container .logo {
 }
 
 header .container .logo img {
-	height: 8vh;
-	width: auto;
-	margin-right: auto;
+	height: auto;
+	width: 100%;
 }
 
 header .container .nav {
 	flex: 1;
+	display: flex;
 }
 
 header .container .navMidle {
@@ -74,7 +97,15 @@ header .container .nav > ul {
 	align-items: center;
 	list-style: none;
 	padding: 0;
+	flex: 1;
 }
+
+header .container .nav > ul > li {
+	flex-grow: 1;
+	text-align: center;
+	position: relative;
+}
+
 header .container .nav > ul > li > a {
 	text-decoration: none;
 	color: var(--color1);
@@ -83,13 +114,7 @@ header .container .nav > ul > li > a {
 	font-weight: 700;
 }
 
-header .container .nav ul > li {
-	flex-grow: 1;
-	text-align: center;
-	position: relative;
-}
-
-header .container .nav ul > li > ul {
+header .container .nav > ul > li > ul {
 	position: absolute;
 	left: 0;
 	top: 100%;
@@ -103,12 +128,12 @@ header .container .nav ul > li > ul {
 	padding-left: 0%;
 }
 
-header .container .nav ul > li:hover > ul {
+header .container .nav > ul > li:hover > ul {
 	display: block;
 	animation: navLiFade 0.5s ease-in;
 }
 
-header .container .nav ul > li > ul > li:hover {
+header .container .nav > ul > li > ul > li:hover {
 	background: var(--color3);
 	color: black;
 }
@@ -118,7 +143,7 @@ header .container .nav ul > li > ul > li {
 	padding: 5% 0 5% 0;
 }
 
-header .container .nav ul > li > ul > li > a {
+header .container .nav > ul > li > ul > li > a {
 	text-decoration: none;
 	color: var(--color1);
 	font-family: var(--font1);
@@ -127,6 +152,11 @@ header .container .nav ul > li > ul > li > a {
 }
 
 @media screen and (max-width: 900px) {
+	header .btnMenuMobile {
+		opacity: 1;
+		rotate: 360deg;
+		visibility: visible;
+	}
 	.wrapAuto {
 		width: var(--widthMobile);
 	}
@@ -135,13 +165,40 @@ header .container .nav ul > li > ul > li > a {
 		align-items: center;
 	}
 
-	header .container .nav,
 	header .container .navMidle {
 		display: none;
 	}
 
 	header .container .logo {
 		justify-content: center;
+		width: 50%;
+	}
+
+	header .container .nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0;
+		flex-direction: column;
+		align-items: center;
+		background: var(--color3);
+		transition: all 0.5s ease-in;
+		visibility: hidden;
+	}
+
+	body.showMenu header .container .nav{
+		height: 100%;
+		visibility: visible;
+	}
+
+
+	header .container .nav > ul {
+		flex-direction: column;
+	}
+	header .container .nav > ul > li {
+		display: flex;
+		align-items: center;
 	}
 }
 
@@ -993,7 +1050,7 @@ footer .container .email .signUpBox button {
 	z-index: 0;
 }
 
-.background::before{
+.background::before {
 	left: 0;
 	top: 0;
 }
@@ -1028,7 +1085,7 @@ body.Popup .background {
 }
 
 body.Popup .background::before,
-body.Popup .background::after{
+body.Popup .background::after {
 	height: 100%;
 	opacity: 1;
 }
