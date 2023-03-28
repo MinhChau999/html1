@@ -85,6 +85,8 @@
       </div>
    </section>
 
+   <?php echo "thay đổi linh tinh" ?>
+
    <script src="resources/js/jquery-3.6.4.min.js"></script>
    <script src="resources/js/script17.js"></script>
 </body>
